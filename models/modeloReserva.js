@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 const Reserva = new Schema({
     idHabitacion:{
-        type: Number,
+        type: String,
         required:true
     },
     nombre:{
@@ -29,10 +29,6 @@ const Reserva = new Schema({
     numeropersonas:{
         type:Number,
         required:true
-    },
-    estado:{
-        type:Boolean
     }
-
 })
-export const modeloReserva=mongoose.model('reservas',Reserva)
+export const modeloReserva=mongoose.model('reservas',Reserva);

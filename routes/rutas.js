@@ -8,15 +8,15 @@ let controladorHabitaciones=new ControladorHabitaciones()
 //DEL API REST
 export let rutas=express.Router()
 
-rutas.get('/buscarhabitaciones',controladorHabitaciones.buscandoHabitacion)
-rutas.get('/buscarhabitacion/:idhabitacion',controladorHabitaciones.buscandoHabitaciones)
+rutas.get('/buscarhabitaciones',controladorHabitaciones.buscandoHabitaciones)
+rutas.get('/buscarhabitacion/:idhabitacion',controladorHabitaciones.buscandoHabitacion)
 rutas.post('/registrarhabitacion',controladorHabitaciones.registrandoHabitacion)
 rutas.put('/editarhabitacion/:idhabitacion',controladorHabitaciones.editandoHabitacion)
 
 //CREAMOS LA INSTANCIA PARA LAS RESERVAS....
 let controladorReservas = new ControladorReservas()
 
-rutas.get('/buscareserva', controladorReservas.buscandoReserva)
-rutas.get('/buscareservas/:idreservas', controladorReservas.buscandoReservas)
+rutas.get('/buscareserva', controladorReservas.buscandoReservas)
+rutas.get('/buscareservas/:idreservas', controladorReservas.buscandoReserva)
 rutas.post('/creareservas', controladorReservas.creandoReservas)
-rutas.put('/editareserva',controladorReservas.editandoReserva)
+rutas.put('/editareserva/:idReserva',controladorReservas.editandoReserva)
