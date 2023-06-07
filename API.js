@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from "cors"
 import { establecerconexion } from './database/conexion.js'
 import { rutas } from './routes/rutas.js'
 
@@ -15,6 +16,7 @@ export class API {
     }
     enrutarPeticiones(){
         //para poderlo usar y que te salga en la conosolaa.....
+        this.app.use(cors())
         this.app.use(express.json())
         this.app.use('/',rutas)
     }
